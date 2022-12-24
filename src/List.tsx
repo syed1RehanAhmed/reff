@@ -5,14 +5,14 @@ import React from "react";
 interface user_Info {
   name: string;
   id: string;
-  job: any;
+  // job: any;
 }
 
 export const List1: React.FC = () => {
-  const { tableProps } = useTable<user_Info>({
+  const { tableProps } = useTable({
     resource: "user_info",
     metaData: {
-      fields: ["id", "name", { job: ["id", "job_name"] }],
+      fields: ["id", "name", { job: ["job_name"] }],
     },
   });
   const { create } = useNavigation();
@@ -23,7 +23,7 @@ export const List1: React.FC = () => {
       <Button onClick={() => create("user_info")}>Create</Button>
       <Table {...tableProps} rowKey="id">
         <Table.Column title="Name" dataIndex={"name"} />
-        <Table.Column title="Job Name" dataIndex={["job", "job_name"]} />
+        {/* <Table.Column title="Job Name" dataIndex={["job", "job_name"]} /> */}
         <Table.Column
           title="Edit"
           render={(val, record: any) => {
