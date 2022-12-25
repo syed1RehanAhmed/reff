@@ -117,3 +117,17 @@ export default UserCreate;
 //     }
 //   }
 // }
+
+// manyto many
+// mutation MyMutation {
+//   insert_articles(objects: {title: "aaaa", articles_tags: {data: [{tag: {data: {title: "xsx"}}}, {tag: {data: {title: "1234"}}}]}}) {
+//     returning {
+//       title
+//       articles_tags {
+//         tag {
+//           title
+//         }
+//       }
+//     }
+//   }
+// }
